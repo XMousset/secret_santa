@@ -65,3 +65,6 @@ mail.close()
 ```
 
 To delete a password, use `keyring.delete_password("yagmail", "your-python-email@gmail.com")`.
+
+## Acknowledgement
+This code takes its inspiration from `santa` by **jarhill0** - [PyPI](https://pypi.org/project/santa/) - [GitHub](https://github.com/jarhill0/santa)
