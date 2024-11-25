@@ -30,7 +30,7 @@ def create_txt_files(text, gifter, folder_path):
     receiver : str
         The path of the folder where to save .txt files.
     """
-    txt_path = Path(folder_path, gifter.name + " - Your Christmas Friend.txt")
+    txt_path = Path(folder_path, gifter.name + " - Your Secret Santa.txt")
     with open(txt_path, mode= "w") as f:
         f.write(text)
 
