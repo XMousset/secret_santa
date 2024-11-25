@@ -1,4 +1,5 @@
 Name,Email,Exclusions,Gifts ideas
-A,test_A@awesome.com,,This is an idea.
-B,test_B@awesome.com,,
-C,test_C@awesome.com,,
+Alice,alice@awesome.com,,Books
+Bob,bob@awesome.com,Charlie,
+Charlie,charlie@awesome.com,,Cinema tickets
+Daisy, daisy@example.com,Alice Bob,
