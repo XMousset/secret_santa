@@ -1,0 +1,11 @@
+{
+    "csv name": "example.csv",
+    "create .txt": true,
+    "mail subject": "Secret Santa - Python",
+    "sending address": "youremail@python.com",
+    "send mails": false,
+    "one loop": true,
+    "max iters": 100,
+    "print attributions": true,
+    "outputs text folder": "outputs_txt"
+}
