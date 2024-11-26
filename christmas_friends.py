@@ -43,22 +43,22 @@ def load_config(json_name):
     return json_dict
 
 
-def csv2friends(csv_name):
-    """Get all friends from csv file.
+def tsv2friends(tsv_name):
+    """Get all friends from tsv file.
 
     Parameters
     ----------
-    csv_name : str
-        The name of the csv file containing the friends informations.
-        Must contain '.csv'.
+    tsv_name : str
+        The name of the tsv file containing the friends informations.
+        Must contain '.tsv'.
 
     Returns
     -------
     list of ChristmasFriend
         A list containing ChristmasFriend objects.
     """
-    with open(csv_name, mode= "r", encoding="utf-8") as csvfile:
-        data_friends = list(csv.DictReader(csvfile, delimiter=","))
+    with open(tsv_name, mode= "r", encoding="utf-8") as tsvfile:
+        data_friends = list(csv.DictReader(tsvfile, delimiter="\t"))
         friends_list = []
         for data in data_friends:
             friends_list.append(ChristmasFriend(**data))

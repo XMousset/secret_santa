@@ -1,4 +1,4 @@
-from christmas_friends import load_config, csv2friends
+from christmas_friends import load_config, tsv2friends
 from attribution_solver import find_solution
 from outputs import christmas_message, create_txt_files, send_email
 
@@ -7,7 +7,7 @@ CONFIG_NAME = "config.json"
 if __name__ == "__main__":
     """The main function, must be run."""
     config = load_config(CONFIG_NAME)
-    friends = csv2friends(config["csv name"])
+    friends = tsv2friends(config["tsv name"])
     attributions, nb_iters = find_solution(friends, **config)
     
     if config["print attributions"]:

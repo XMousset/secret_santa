@@ -1,0 +1,5 @@
+Name	Email	Exclusions	Gifts ideas
+Alice	alice@example.com		Books
+Bob	bob@example.com	Charlie	
+Charlie	charlie@example.com		Cinema tickets
+Daisy	daisy@example.com	Alice Bob	

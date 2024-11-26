@@ -1,5 +1,5 @@
 {
-    "csv name": "example.csv",
+    "tsv name": "example.tsv",
     "create .txt": false,
     "mail subject": "Secret Santa - Python",
     "sending address": "your-python-email@gmail.com",
