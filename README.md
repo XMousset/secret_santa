@@ -9,9 +9,9 @@ This tool operates using a `.csv` file (e.g., exported from Google Sheets), wher
 ## How It Works
 
 1. **Prepare the Input File**:
-   - Use a `.csv` containing the columns in the example (be careful not to have any coma `,` inside this file as it will be used as separator).
-   - **Exclusions** must contain the exact same names as there is in **Name**. Multiple names can be used, separated by a space ` `.
-   - Example:
+   - Export a spreadsheet (e.g. Google Sheet, LibreOffice Calc or other) as `.csv` containing the same columns as the example. Be careful not to have any coma `,` inside this file as it will be used as separator.
+   - **Exclusions** must contains names identical as in the **Name** column. Multiple names can be used, separated by a space ` `.
+   - Example of spreadsheet you need to export (see `example.csv` file for the export result) :
 
      | Name        | Email               | Exclusions       | Gifts ideas      |
      |-------------|---------------------|------------------|------------------|
