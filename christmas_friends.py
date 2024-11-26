@@ -22,7 +22,8 @@ class ChristmasFriend:
     def is_excluded_for(self, friend):
         if not isinstance(friend, ChristmasFriend):
             raise ValueError("'friend' must be a ChristmasFriend object.")
-        return self.name in friend.exclusions
+        lower_excl = [excl.lower().strip(",") for excl in friend.exclusions]
+        return self.name.lower() in lower_excl
 
 
 def load_config(json_name):

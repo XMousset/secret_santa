@@ -2,16 +2,16 @@
 
 The **Secret Santa Organizer** is a Python tool designed to simplify the process of organizing a Secret Santa event. It allows users to randomly assign Secret Santa pairs from a group of people. The assignments are handled discreetly, ensuring no one knows who their Secret Santa is.
 
-This tool operates using a `.csv` file (e.g., exported from Google Sheets), where participants can input their details directly. The assignments can be shared via email or as individual `.txt` files, making the process easy and secure.
+This tool operates using a `.tsv` file generated from Google Sheet export, containing participants informations. The Secret Santa assignments can be shared via email or as individual `.txt` files, making the process easy and secure.
 
 **For full explanations on emails, see the appropriate section below**.
 
 ## How It Works
 
 1. **Prepare the Input File**:
-   - Export a spreadsheet (e.g. Google Sheet, LibreOffice Calc or other) as `.csv` containing the same columns as the example. Be careful not to have any coma `,` inside this file as it will be used as separator.
-   - **Exclusions** must contains names identical as in the **Name** column. Multiple names can be used, separated by a space ` `.
-   - Example of spreadsheet you need to export (see `example.csv` file for the export result) :
+   - Export a spreadsheet as `.tsv` containing the same columns as the example.
+   - **Exclusions** must contains names identical as in the **Name** column. Multiple names can be used.
+   - Example of spreadsheet you need to export (see `example.tsv` file for the export result) :
 
      | Name        | Email               | Exclusions       | Gifts ideas      |
      |-------------|---------------------|------------------|------------------|
