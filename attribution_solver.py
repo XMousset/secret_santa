@@ -1,6 +1,9 @@
 import random
 
+from config import CONFIG
+
 random.seed()
+
 
 def invalid_exclusions(attributions):
     """Check if 'attributions' respect exclusions requests.
@@ -22,7 +25,7 @@ def invalid_exclusions(attributions):
     return False
 
 
-def is_valid(attributions, friends, **kwargs):
+def is_valid(attributions, friends):
     """Process each loop separatly and check if the attributions are valid.
 
     Parameters
@@ -45,7 +48,7 @@ def is_valid(attributions, friends, **kwargs):
     """
     nb_loop = len(attributions) - len(friends)
     
-    if kwargs["one loop"] and nb_loop != 1:
+    if CONFIG["one loop"] and nb_loop != 1:
         return False
     
     attr_loops = []
@@ -68,7 +71,7 @@ def is_valid(attributions, friends, **kwargs):
     return True
 
 
-def attribute_friends(friends, **kwargs):
+def attribute_friends(friends):
     """Create the 'attributions' list.
 
     Parameters
@@ -93,7 +96,7 @@ def attribute_friends(friends, **kwargs):
     not_choose = friends.copy()
     
     while len(attributions) < nb_friends + nb_loops:
-        if new_loop or kwargs["one loop"]:
+        if new_loop or CONFIG["one loop"]:
             legal_choices = not_choose.copy()
             if len(not_choose) == 0:
                 legal_choices.append(start_loop)
@@ -118,8 +121,8 @@ def attribute_friends(friends, **kwargs):
     return attributions
 
 
-def find_solution(friends, **kwargs):
-    """Generate 'attributions' lists until the list is valid.
+def find_solution(friends):
+    """Generate a valid attribution list.
 
     Parameters
     ----------
@@ -144,12 +147,12 @@ def find_solution(friends, **kwargs):
     """
     it = 0
     attributions = []
-    while not is_valid(attributions, friends, **kwargs):
-        if it >= kwargs["max iters"]:
+    while not is_valid(attributions, friends):
+        if it >= CONFIG["max iters"]:
             raise ValueError(
                 f"Could not find attributions in {it} "
                 "iterations."
             )
-        attributions = attribute_friends(friends, **kwargs)
+        attributions = attribute_friends(friends)
         it += 1
     return attributions, it

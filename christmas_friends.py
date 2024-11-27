@@ -1,5 +1,6 @@
 import csv
-import json
+
+from config import CONFIG
 
 
 class ChristmasFriend:
@@ -26,25 +27,7 @@ class ChristmasFriend:
         return self.name.lower() in lower_excl
 
 
-def load_config(json_name):
-    """Load the file 'config.json'.
-
-    Parameters
-    ----------
-    json_name : str
-        Name of the json file (must contain '.json').
-
-    Returns
-    -------
-    dict
-        A dict with the config informations.
-    """
-    with open(json_name, "r", encoding="utf-8") as file:
-        json_dict = json.load(file)
-    return json_dict
-
-
-def tsv2friends(tsv_name):
+def load_friends_from_tsv():
     """Get all friends from tsv file.
 
     Parameters
@@ -58,7 +41,7 @@ def tsv2friends(tsv_name):
     list of ChristmasFriend
         A list containing ChristmasFriend objects.
     """
-    with open(tsv_name, mode= "r", encoding="utf-8") as tsvfile:
+    with open(CONFIG["tsv name"], mode= "r", encoding="utf-8") as tsvfile:
         data_friends = list(csv.DictReader(tsvfile, delimiter="\t"))
         friends_list = []
         for data in data_friends:

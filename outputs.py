@@ -2,6 +2,8 @@ from pathlib import Path
 
 import yagmail
 
+from config import CONFIG
+
 
 def christmas_message(gifter, receiver):
     text = "GIFTER, you are the Secret Santa of RECEIVER.\n\n"
@@ -18,7 +20,7 @@ def christmas_message(gifter, receiver):
     return text
 
 
-def create_txt_files(text, gifter, folder_path):
+def create_txt_files(text, gifter):
     """Manage outputs either as mails or .txt files.
 
     Parameters
@@ -30,12 +32,13 @@ def create_txt_files(text, gifter, folder_path):
     receiver : str
         The path of the folder where to save .txt files.
     """
-    txt_path = Path(folder_path, gifter.name + " - Your Secret Santa.txt")
+    save_folder = CONFIG["outputs text folder"]
+    txt_path = Path(save_folder, gifter.name + " - Your Secret Santa.txt")
     with open(txt_path, mode= "w") as f:
         f.write(text)
 
 
-def send_email(text, friend, **kwargs):
+def send_email(text, friend):
     """Send email using yagmail.
 
     Parameters
@@ -45,7 +48,7 @@ def send_email(text, friend, **kwargs):
     gifter : ChristmasFriend
         The friend who will receive the email.
     """
-    mail = yagmail.SMTP(kwargs["sending address"])
-    mail.send(friend.mail, kwargs["mail subject"], text)
+    mail = yagmail.SMTP(CONFIG["sending address"])
+    mail.send(friend.mail, CONFIG["mail subject"], text)
     mail.close()
     print(f"Email sent to {friend.mail}")
