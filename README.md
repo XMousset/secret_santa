@@ -36,8 +36,12 @@ This tool operates using a `.tsv` file generated from Google Sheet export, conta
 
 ## Libraries
 
-- `yagmail` and `keyring` for email sending
+- **yagmail** and **keyring** for email sending.
 
+To install all librairies :
+``` bash
+pip install yagmail keyring
+```
 
 ## Sending email with Python using `yagmail`
 
