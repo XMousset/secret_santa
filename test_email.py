@@ -1,6 +1,6 @@
-from christmas_friends import ChristmasFriend
-from outputs import christmas_message, send_email
-from config import CONFIG
+from scripts.christmas_friends import ChristmasFriend
+from scripts.outputs import christmas_message, send_email
+from scripts.config import CONFIG
 
 TRY_SENDING = False
 

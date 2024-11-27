@@ -1,6 +1,6 @@
 import csv
 
-from config import CONFIG
+from scripts.config import CONFIG
 
 
 class ChristmasFriend:

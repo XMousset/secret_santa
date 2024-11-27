@@ -1,6 +1,6 @@
 import random
 
-from config import CONFIG
+from scripts.config import CONFIG
 
 random.seed()
 

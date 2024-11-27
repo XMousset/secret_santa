@@ -1,7 +1,7 @@
-from christmas_friends import load_friends_from_tsv
-from attribution_solver import find_solution
-from outputs import christmas_message, create_txt_files, send_email
-from config import CONFIG
+from scripts.christmas_friends import load_friends_from_tsv
+from scripts.attribution_solver import find_solution
+from scripts.outputs import christmas_message, create_txt_files, send_email
+from scripts.config import CONFIG
 
 if __name__ == "__main__":
     friends = load_friends_from_tsv()
