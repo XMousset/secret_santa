@@ -48,7 +48,7 @@ def send_email(text, friend):
     gifter : ChristmasFriend
         The friend who will receive the email.
     """
-    # mail = yagmail.SMTP(CONFIG["sending address"])
-    # mail.send(friend.mail, CONFIG["mail subject"], text)
-    # mail.close()
+    mail = yagmail.SMTP(CONFIG["sending address"])
+    mail.send(friend.mail, CONFIG["mail subject"], text)
+    mail.close()
     print(f"Email sent to {friend.mail}")
