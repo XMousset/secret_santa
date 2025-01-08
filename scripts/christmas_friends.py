@@ -13,6 +13,7 @@ class ChristmasFriend:
         self.exclusions = kwargs["Exclusions"].split(" ")
         self.exclusions.append(self.name)
         self.gifts_ideas = kwargs.get("Gifts ideas", "")
+    
     def __repr__(self):
         return self.name
 
