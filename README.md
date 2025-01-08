@@ -33,6 +33,7 @@ This tool operates using a `.tsv` file generated from Google Sheet export, conta
 4. **Share the Assignments**:
    - Everything should work fine at this point.
 
+If an error occur during email sending, you can use *FROM_SAVE = True* to load your attributions and continue sending emails after debugging.
 
 ## Libraries
 
