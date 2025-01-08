@@ -132,7 +132,7 @@ def find_solution(friends):
     Returns
     -------
     list of ChristmasFriend
-        A list of Christmas friend in attributions order that is valid.
+        A list of ChristmasFriend objects in attributions order that is valid.
         Friend that start a loop must appear twice in the list
         as they also close the loop.
         (e.g. for a list of 2 loops of 5 friends :

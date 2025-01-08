@@ -1,4 +1,5 @@
 import csv
+from pathlib import Path
 
 from scripts.config import CONFIG
 
@@ -47,3 +48,47 @@ def load_friends_from_tsv():
         for data in data_friends:
             friends_list.append(ChristmasFriend(**data))
         return friends_list
+
+
+def saving(attributions):
+    """Save attributions in txt file, in case of error during email sending.
+
+    Parameters
+    ----------
+    attributions : list of ChristmasFriend
+        A list of ChristmasFriend objects in attributions order.
+    """
+    save_path = Path.joinpath(
+        Path(__file__).parent.parent, "scripts", "saved_attributions.txt"
+    )
+    names = [friend.name for friend in attributions]
+    with open(save_path, mode= "w", encoding="utf-8") as save_file:
+        save_file.write(", ".join(names))
+
+
+def loading():
+    """Load attributions from save (txt file).
+
+    Returns
+    -------
+    list of ChristmasFriend
+        A list of ChristmasFriend objects in attributions order.
+    """
+    friends_list = load_friends_from_tsv()
+    
+    save_path = Path.joinpath(
+        Path(__file__).parent.parent, "scripts", "saved_attributions.txt"
+    )
+    with open(save_path, mode= "r", encoding="utf-8") as save_file:
+        save = save_file.read().split(", ")
+        attributions = []
+        
+        for name in save:
+            idx = 0
+            while name != friends_list[idx].name:
+                idx += 1
+            attributions.append(friends_list[idx])
+        
+        print("Loaded attributions: ", attributions)
+        
+        return attributions
