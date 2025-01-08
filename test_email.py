@@ -18,6 +18,6 @@ if __name__ == "__main__":
         if (CONFIG["sending address"] == "your-python-email@gmail.com"
             or to_me.mail == "receiver_address@awesome.com"):
             raise ValueError("You need to put valid email in 'config.json'" \
-                " and for tje 'to_me' ChristmasFriend")
+                " and for the 'to_me' ChristmasFriend")
         
         send_email(message, to_me)

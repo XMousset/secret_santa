@@ -53,12 +53,12 @@ I suggest you to create a new gmail account for this purpose. You will always us
 3) **Set a name for the password** (e.g. *Python yagmail*) - *This step is **blocked** if your account doesn't have a 2-step Verification*
 4) **Copy the password** - *be careful, it cannot be seen again afterward, but can be deleted of course*
 
-There are many tutorials for this on the web (e.g. *Google Gmail Remove Allow Less Secure Apps Option Alternative Solution* by **Geeky Shows**). When you have your password, follow these steps **ONE TIME** in order to be able to send email.
+There are many tutorials for this on the web (e.g. *Google Gmail Remove Allow Less Secure Apps Option Alternative Solution* by **Geeky Shows**). When you have your password, follow "Python implementation" steps **ONE TIME** in order to be able to send email.
 
 ### **Python implementation**:
 1) Install `yagmail` and `keyring`.
 2) Register you email address and password : `yagmail.register("your-python-email@gmail.com", "yourpassword")`.
-3) Put `"your-python-email@gmail.com"` in config:"sending address".
+3) Put `"your-python-email@gmail.com"` in the the file `config.json` at "sending address".
 4) Test if you can send an email to one of your email adress with `test_email.py`.
 
 Now you can use `yagmail` without explicitely write your password in your code as the following example :
